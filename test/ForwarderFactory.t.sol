@@ -2,7 +2,6 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
-import "forge-std/console2.sol";
 import "openzeppelin-contracts/contracts/token/ERC20/presets/ERC20PresetMinterPauser.sol";
 import "../src/ForwarderFactory.sol";
 import "../src/Forwarder.sol";
@@ -12,6 +11,7 @@ contract ForwarderFactoryTest is Test {
     ERC20PresetMinterPauser private dummyToken;
 
     function setUp() public {
+        console2.log("test");
         forwarderFactory = new ForwarderFactory();
         dummyToken = new ERC20PresetMinterPauser("Dummy Token", "DMT");
     }
