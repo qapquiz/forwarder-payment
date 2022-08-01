@@ -5,8 +5,15 @@ import "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
 
 contract Forwarder {
     address public destination;
+    bool public isInitialize;
 
     constructor(address _destination) {
+        destination = _destination;
+        isInitialize = true;
+    }
+
+    function init(address _destination) public {
+        require(!isInitialize, "already initialized");
         destination = _destination;
     }
 
